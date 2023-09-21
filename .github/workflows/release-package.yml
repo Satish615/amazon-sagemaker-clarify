@@ -18,8 +18,9 @@ jobs:
         uses: TriPSs/conventional-changelog-action@v3.7.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          skip-version-file: 'true'
+          tag-prefix: 'v'
           skip-git-pull: "true"
+          skip-on-empty: "true"
 
       - name: create release
         uses: actions/create-release@v1
