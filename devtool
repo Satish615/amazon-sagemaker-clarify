@@ -69,6 +69,10 @@ install_package(){
   pip install --upgrade dist/$wheel_name
 }
 
+create_new_feature(){
+  echo "creating new feature for bias metrics"
+}
+
 all() {
     lint
     test_with_coverage
