@@ -9,11 +9,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build Changelog
+        id: github_release
         uses: mikepenz/release-changelog-builder-action@v3
         with:
           configuration: "configuration.json"
+          fromTag: "v0.5"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: output changelog
+        run: echo ${{steps.build_changelog.outputs.changelog}} > changelog.txt
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
