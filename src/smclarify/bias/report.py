@@ -28,6 +28,7 @@ class FacetColumn(Column):
         initialize facet column name and  facet_values if present
         :param name: str
         :param sensitive_values: list of values indicating categories or threshold
+        : fix the explanations aggregation for kernel shap algorithm spark path
         """
         super().__init__(name)
         self.sensitive_values = sensitive_values
